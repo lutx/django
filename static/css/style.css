@@ -4,10 +4,70 @@
 	color: green;
 }
 
-body
+
+
+footer
 {
-	background-color: #d282f2;
-	color: #efefef;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #2F3336;
+    color: black;
+    text-align: center;
+}
+
+body{
+	background-color: #ededed;
+	color: #2F3336;
     font-family: 'Open Sans', sans-serif;
     font-size: 17px;
+    
+}
+.home
+{
+	color: #2F3336;
+	text-align: center;
+}
+
+.jumpers
+{
+	text-align: center;
+}
+
+.jumpers img
+{
+	width: 100%;
+	height: auto;
+}
+
+.jumpers p
+{
+	margin-bottom: 30px;
+}
+
+.jumpers figcaption
+{
+	margin-top: 8px;
+}
+
+/*
+.navbar-nav li:hover>.dropdown-menu
+{
+	display: block;
+}
+*/
+
+.navbar
+{
+	min-height: 57px;
+}
+
+.bg-jumpers
+{
+	background-color: #91a33b !important;
+}
+.kontakt
+{
+	text-align: center;
 }
