@@ -34,11 +34,20 @@ body
 }
 .content h1
 {
-	color: #ff0000; font-family: 'Righteous', cursive; font-size: 65px; font-weight: normal; line-height: 60px; margin: 10px 0 20px; text-transform: uppercase; text-shadow: 2px 2px 0 #000, margin: 10px 0 24px; text-align: center; 
+	color: #ff0000; font-family: 'Righteous', cursive; font-size: 45px; font-weight: normal; line-height: 60px; margin: 10px 0 20px; text-transform: uppercase; text-shadow: 2px 2px 0 #000, margin: 10px 0 24px; text-align: center; 
+}
+.content h2
+{
+	color: #029105; font-family: 'Righteous', cursive; font-size: 30px; font-weight: normal; line-height: 60px; margin: 10px 0 20px; text-transform: uppercase; text-shadow: 2px 2px 0 #000, margin: 10px 0 24px; text-align: center; 
 }
 .home
 {
 	color: #2F3336;
+	text-align: center;
+}
+.home p
+{
+	font-size: 20px;
 	text-align: center;
 }
 
@@ -105,4 +114,16 @@ body
 	z-index: 1030;
             
  
+}
+.row
+{
+	margin-top: 60px;
+}
+.list-group
+{
+
+	font-size: 20px;
+	font-style: Gill Sans, sans-serif;
+	font-weight: 600;
+	padding-bottom:  80px;
 }
