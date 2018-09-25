@@ -1,7 +1,7 @@
 {% load static %}
 <!doctype html>
 <!DOCTYPE html>
-<html>
+<html lang="pl-PL">
 <head>
 	<title>Fasady z cegły</title>
 
@@ -11,10 +11,14 @@
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+ <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
- 
+ <!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+	
  
 	  
 </head>
@@ -22,29 +26,54 @@
 <body>
 	
 	{% include 'nav.html' %}
+<div class="content">	
 	{% block content %} 
 
-	replace me
+	
 	{% endblock %}
-
+</div>
 	 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	
-	<script src="js/bootstrap.min.js"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
 	
+	<script>
+
+	$( document ).ready( function () {
+		$( '.dropdown' ).on( 'click', function ( e ) {
+			var $el = $( this );
+			var $parent = $( this ).offsetParent( ".dropdown-menu" );
+			if ( !$( this ).next().hasClass( 'show' ) ) {
+				$( this ).parents( '.dropdown-menu' ).first().find( '.show' ).removeClass( "show" );
+			}
+			var $subMenu = $( this ).next( ".dropdown-menu" );
+			$subMenu.toggleClass( 'show' );
+			
+			$( this ).parent( "li" ).toggleClass( 'show' );
+
+			$( this ).parents( 'li.nav-item.dropdown.show' ).on( 'hidden.bs.dropdown', function ( e ) {
+				$( '.dropdown-menu .show' ).removeClass( "show" );
+			} );
+			
+			 if ( !$parent.parent().hasClass( 'navbar-nav' ) ) {
+				$el.next().css( { "top": $el[0].offsetTop, "left": $parent.outerWidth() - 4 } );
+			}
+
+			return false;
+		} );
+	} );
+	
+	</script>
 
 </body>
 	
-	 <footer class="footer">
+	 <footer >
 	 	<div class="container">
-        <p class="text-muted text-right">&copy; 2018  <a href="https://www.lukaszu.pl">lukaszu.pl</a></p>
-        
-
-
-      </div>
+        <p class=" text-right ">&copy; 2018  <a href="https://www.lukaszu.pl">lukaszu</a>All Rights Reserved</p>
+        </div>
      </footer>
 
 
